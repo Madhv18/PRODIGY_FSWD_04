@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register - ChatApp</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+    <div class="form-container">
+      <h2>🚀 Join ChatApp</h2>
+
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for
+      message in messages %}
+      <div class="flash">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %}
+
+      <form method="POST">
+        <input
+          type="text"
+          name="username"
+          placeholder="👤 Choose Username"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="📧 Email Address"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="🔒 Create Password"
+          required
+        />
+        <button type="submit">Create Account</button>
+      </form>
+
+      <p style="text-align: center; margin-top: 1.5rem">
+        <a href="/login" style="color: #2563eb; text-decoration: none"
+          >Already have an account? Login</a
+        >
+      </p>
+      <p style="text-align: center">
+        <a href="/" style="color: #6b7280; text-decoration: none"
+          >← Back to Home</a
+        >
+      </p>
+    </div>
+  </body>
+</html>
